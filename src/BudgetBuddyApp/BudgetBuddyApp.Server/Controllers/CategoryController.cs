@@ -1,4 +1,5 @@
 using BudgetBuddyApp.Server.Interfaces.Services;
+using BudgetBuddyApp.Server.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBuddyApp.Server.Controllers
@@ -24,7 +25,7 @@ namespace BudgetBuddyApp.Server.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected error occured, please try again later");
+                return StatusCode(500, Constants.ServerErrorMessage);
             }
             
         }
@@ -43,7 +44,7 @@ namespace BudgetBuddyApp.Server.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected error occured, please try again later");
+                return StatusCode(500, Constants.ServerErrorMessage);
             }
         }
 
@@ -61,7 +62,7 @@ namespace BudgetBuddyApp.Server.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "An unexpected error occured, please try again later");
+                return StatusCode(500, Constants.ServerErrorMessage);
             }
             
         }
