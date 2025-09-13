@@ -1,3 +1,4 @@
+using BudgetBuddyApp.Server.DTOs;
 using BudgetBuddyApp.Server.Entities;
 using BudgetBuddyApp.Server.Interfaces.Repositories;
 using BudgetBuddyApp.Server.Interfaces.Services;
@@ -26,10 +27,16 @@ namespace BudgetBuddyApp.Server.Services.CategoryService
             
         }
 
-        public async Task<CategoryEntity> AddCategoryAsync(CategoryEntity category)
+        public async Task<CategoryEntity> AddCategoryAsync(AddCategoryDTO newCategory)
         {
             try
             {
+                var category = new CategoryEntity
+                {
+                    UserId = newCategory.UserId,
+                    Name = newCategory.Name
+                };
+
                 return await _repository.AddCategoryAsync(category);
             }
             catch (Exception ex)

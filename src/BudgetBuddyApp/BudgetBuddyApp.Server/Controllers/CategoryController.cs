@@ -1,3 +1,4 @@
+using BudgetBuddyApp.Server.DTOs;
 using BudgetBuddyApp.Server.Interfaces.Services;
 using BudgetBuddyApp.Server.Utils;
 using Microsoft.AspNetCore.Mvc;
@@ -50,7 +51,7 @@ namespace BudgetBuddyApp.Server.Controllers
 
         // POST: api/categories
         [HttpPost]
-        public async Task<IActionResult> AddCategory([FromBody] Category category)
+        public async Task<IActionResult> AddCategory([FromBody] AddCategoryDTO category)
         {
             try
             {

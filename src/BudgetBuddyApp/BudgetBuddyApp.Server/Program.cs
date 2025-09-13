@@ -2,6 +2,7 @@
 using BudgetBuddyApp.Server.Data;
 using BudgetBuddyApp.Server.Interfaces.Repositories;
 using BudgetBuddyApp.Server.Interfaces.Services;
+using BudgetBuddyApp.Server.Repositories.CategoryRepository;
 using BudgetBuddyApp.Server.Repositories.UserRepository;
 using BudgetBuddyApp.Server.Services.CategoryService;
 using BudgetBuddyApp.Server.Services.UserService;
