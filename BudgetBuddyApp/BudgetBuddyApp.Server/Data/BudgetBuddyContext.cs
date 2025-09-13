@@ -27,7 +27,7 @@ namespace BudgetBuddyApp.Server.Data
                 entity.HasIndex(c => new { c.UserId, c.Name })
                       .IsUnique();
 
-                entity.HasOne(c => c.UserEntity)
+                entity.HasOne(c => c.User)
                       .WithMany(u => u.Categories)
                       .HasForeignKey(c => c.UserId)
                       .OnDelete(DeleteBehavior.Cascade);
