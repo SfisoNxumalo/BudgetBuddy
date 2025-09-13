@@ -1,6 +1,5 @@
 using BudgetBuddyApp.Server.Entities;
 using BudgetBuddyApp.Server.Interfaces.Services;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBuddyApp.Server.Controllers
@@ -15,12 +14,12 @@ namespace BudgetBuddyApp.Server.Controllers
             _userService = userService;
         }
 
-        [HttpGet("/")]
+        [HttpGet("Users")]
         public async Task<ActionResult<List<UserEntity>>> GetUsers()
         {
             try
             {
-                var users = _userService.GetUsersAsync();
+                var users = await _userService.GetUsersAsync();
                 return Ok(users);
             }
             catch (Exception ex)
