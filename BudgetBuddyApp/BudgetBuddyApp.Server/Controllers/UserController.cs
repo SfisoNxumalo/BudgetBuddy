@@ -1,4 +1,6 @@
+using BudgetBuddyApp.Server.Entities;
 using BudgetBuddyApp.Server.Interfaces.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBuddyApp.Server.Controllers
@@ -13,6 +15,18 @@ namespace BudgetBuddyApp.Server.Controllers
             _userService = userService;
         }
 
-        public async 
+        [HttpGet("/")]
+        public async Task<ActionResult<List<UserEntity>>> GetUsers()
+        {
+            try
+            {
+                var users = _userService.GetUsersAsync();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

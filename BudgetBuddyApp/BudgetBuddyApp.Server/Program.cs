@@ -1,5 +1,9 @@
 
 using BudgetBuddyApp.Server.Data;
+using BudgetBuddyApp.Server.Interfaces.Repositories;
+using BudgetBuddyApp.Server.Interfaces.Services;
+using BudgetBuddyApp.Server.Repositories.UserRepository;
+using BudgetBuddyApp.Server.Services.UserService;
 using Microsoft.EntityFrameworkCore;
 
 namespace BudgetBuddyApp.Server
@@ -16,6 +20,9 @@ namespace BudgetBuddyApp.Server
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserService, UserService>();
 
 
             builder.Services.AddDbContext<BudgetBuddyContext>(
