@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetBuddyApp.Server.Data
 {
+    //I used ChatGpt to generate some parts of the DBContext, I then modified it
     public class BudgetBuddyContext : DbContext
     {
         public BudgetBuddyContext(DbContextOptions<BudgetBuddyContext> options) : base(options) { }
