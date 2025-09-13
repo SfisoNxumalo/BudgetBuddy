@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace BudgetBuddyApp.Server.DTOs
+namespace BudgetBuddyApp.Server.DTOs.CategoryDTOs
 {
     //This DTO was created using ChatGPT
     public class AddCategoryDTO

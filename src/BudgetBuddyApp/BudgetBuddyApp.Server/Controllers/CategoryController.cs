@@ -1,4 +1,4 @@
-using BudgetBuddyApp.Server.DTOs;
+using BudgetBuddyApp.Server.DTOs.CategoryDTOs;
 using BudgetBuddyApp.Server.Interfaces.Services;
 using BudgetBuddyApp.Server.Utils;
 using Microsoft.AspNetCore.Mvc;

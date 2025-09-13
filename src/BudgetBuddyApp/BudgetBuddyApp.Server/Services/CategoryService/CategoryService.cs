@@ -1,4 +1,4 @@
-using BudgetBuddyApp.Server.DTOs;
+using BudgetBuddyApp.Server.DTOs.CategoryDTOs;
 using BudgetBuddyApp.Server.Entities;
 using BudgetBuddyApp.Server.Interfaces.Repositories;
 using BudgetBuddyApp.Server.Interfaces.Services;
@@ -9,12 +9,12 @@ namespace BudgetBuddyApp.Server.Services.CategoryService
     {
         private readonly ICategoryRepository _repository;
 
-        public CategoryService(ICategoryRepository repository, Logger<CategoryService> logger)
+        public CategoryService(ICategoryRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<List<CategoryEntity>> GetCategoriesByUserIdAsync(Guid userId)
+        public async Task<List<ViewCategoryDTO>> GetCategoriesByUserIdAsync(Guid userId)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace BudgetBuddyApp.Server.Services.CategoryService
             
         }
 
-        public async Task<CategoryEntity?> GetCategoryByIdAsync(Guid categoryId)
+        public async Task<ViewCategoryDTO?> GetCategoryByIdAsync(Guid categoryId)
         {
             try
             {

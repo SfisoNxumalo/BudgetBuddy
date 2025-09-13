@@ -1,4 +1,5 @@
 using BudgetBuddyApp.Server.Data;
+using BudgetBuddyApp.Server.DTOs.CategoryDTOs;
 using BudgetBuddyApp.Server.Entities;
 using BudgetBuddyApp.Server.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +16,16 @@ namespace BudgetBuddyApp.Server.Repositories.CategoryRepository
             _context = context;
         }
 
-        public async Task<List<CategoryEntity>> GetCategoriesByUserIdAsync(Guid userId)
+        public async Task<List<ViewCategoryDTO>> GetCategoriesByUserIdAsync(Guid userId)
         {
-            return await _context.Categories
-                                 .AsNoTracking()
-                                 .Where(c => c.UserId.Equals(userId))
+            return await _context.Categories.AsNoTracking()
+                                 .Where(c => c.UserId.Equals(userId)).Select(category => new ViewCategoryDTO
+                                 {
+                                     Id = category.Id,
+                                     Name = category.Name,
+                                     UserId = category.UserId,
+                                     CreatedAt = category.CreatedAt
+                                 })
                                  .ToListAsync();
         }
 
@@ -30,10 +36,16 @@ namespace BudgetBuddyApp.Server.Repositories.CategoryRepository
             return category;
         }
 
-        public async Task<CategoryEntity?> GetCategoryByIdAsync(Guid categoryId)
+        public async Task<ViewCategoryDTO?> GetCategoryByIdAsync(Guid categoryId)
         {
             return await _context.Categories
-                                 .AsNoTracking()
+                                 .AsNoTracking().Select(category => new ViewCategoryDTO
+                                 {
+                                     Id = category.Id,
+                                     Name = category.Name,
+                                     UserId = category.UserId,
+                                     CreatedAt = category.CreatedAt
+                                 })
                                  .FirstOrDefaultAsync(c => c.Id.Equals(categoryId));
         }
     }

@@ -1,4 +1,4 @@
-using BudgetBuddyApp.Server.Entities;
+using BudgetBuddyApp.Server.DTOs.UserDTOs;
 using BudgetBuddyApp.Server.Interfaces.Services;
 using BudgetBuddyApp.Server.Utils;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +16,7 @@ namespace BudgetBuddyApp.Server.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<UserEntity>>> GetUsers()
+        public async Task<ActionResult<List<ViewUserDTO>>> GetUsers()
         {
             try
             {
