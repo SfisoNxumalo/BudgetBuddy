@@ -3,6 +3,7 @@ using BudgetBuddyApp.Server.Data;
 using BudgetBuddyApp.Server.Interfaces.Repositories;
 using BudgetBuddyApp.Server.Interfaces.Services;
 using BudgetBuddyApp.Server.Repositories.UserRepository;
+using BudgetBuddyApp.Server.Services.CategoryService;
 using BudgetBuddyApp.Server.Services.UserService;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,9 @@ namespace BudgetBuddyApp.Server
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<IUserService, UserService>();
+
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+            builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 
             builder.Services.AddDbContext<BudgetBuddyContext>(
