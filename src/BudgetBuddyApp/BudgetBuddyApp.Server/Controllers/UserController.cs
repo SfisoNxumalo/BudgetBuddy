@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BudgetBuddyApp.Server.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class UserController : Controller
     {
 

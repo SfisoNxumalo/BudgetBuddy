@@ -8,25 +8,48 @@ namespace BudgetBuddyApp.Server.Services.CategoryService
     {
         private readonly ICategoryRepository _repository;
 
-        public CategoryService(ICategoryRepository repository)
+        public CategoryService(ICategoryRepository repository, Logger<CategoryService> logger)
         {
             _repository = repository;
         }
 
         public async Task<List<CategoryEntity>> GetCategoriesByUserIdAsync(Guid userId)
         {
-            return await _repository.GetCategoriesByUserIdAsync(userId);
+            try
+            {
+                return await _repository.GetCategoriesByUserIdAsync(userId);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public async Task<CategoryEntity> AddCategoryAsync(CategoryEntity category)
         {
-
-            return await _repository.AddCategoryAsync(category);
+            try
+            {
+                return await _repository.AddCategoryAsync(category);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public async Task<CategoryEntity?> GetCategoryByIdAsync(Guid categoryId)
         {
-            return await _repository.GetCategoryByIdAsync(categoryId);
+            try
+            {
+                return await _repository.GetCategoryByIdAsync(categoryId);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
     }
 }
