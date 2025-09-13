@@ -1,7 +1,6 @@
-namespace BudgetBuddyApp.Server.Interfaces.Services
+﻿namespace BudgetBuddyApp.Server.Interfaces.Services
 {
-    public interface IUserRepository
+    public interface IUserService
     {
-
     }
 }
