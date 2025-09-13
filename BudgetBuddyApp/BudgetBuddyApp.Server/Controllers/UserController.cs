@@ -14,7 +14,7 @@ namespace BudgetBuddyApp.Server.Controllers
             _userService = userService;
         }
 
-        [HttpGet("Users")]
+        [HttpGet]
         public async Task<ActionResult<List<UserEntity>>> GetUsers()
         {
             try
