@@ -8,8 +8,11 @@ namespace BudgetBuddyApp.Server.Entities
         [Key]
         public Guid Id { get; set; }
 
-        public DateTime cCreatedAt { get; set; }
-        public DateTime pdatedAt { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public DateTime UpdatedAt { get; set; }
+
+
 
     }
 }
