@@ -1,4 +1,7 @@
 
+using BudgetBuddyApp.Server.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace BudgetBuddyApp.Server
 {
     public class Program
@@ -14,7 +17,18 @@ namespace BudgetBuddyApp.Server
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+
+            builder.Services.AddDbContext<BudgetBuddyContext>(
+            options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
             var app = builder.Build();
+
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<BudgetBuddyContext>();
+                db.Database.EnsureCreated();
+                DatabaseSeeder.Seed(db);
+            }
 
             app.UseDefaultFiles();
             app.UseStaticFiles();

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BudgetBuddyApp.Server.Data
 {
-    public class DatabaseSeeders
+    public class DatabaseSeeder
     {
         //I used ChatGpt to generate this Seeder, I updated it meet my needs
         public static void Seed(BudgetBuddyContext context)
