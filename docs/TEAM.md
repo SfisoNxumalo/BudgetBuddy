@@ -6,23 +6,19 @@
 
 ## ⚒️ Team Name
 ``` c
-// TODO: Fill-in the name of your team.
+S.O.L.I.D
 ```
 
 ## 👥 Members
 | Name     | Role                | Institution           | Discord Handle | Email |
 |----------|---------------------|-----------------------| -------------------|-------------|
-| **Name 1**   | Backend Developer   | University of Cape Town | name1 | <email1@gmail.com> |
-| **Name 2**   | Frontend Developer  | University of the Witwatersrand | name2 | <email2@gmail.com> |
-| **Name 3**   | Designer            | University of Johannesburg | name3 | <email3@gmail.com> |
-| **Name 4**   | Q.A Tester          | University of the Western Cape | name4 | <email4@gmail.com> |
+| **Sifiso Mawila**   | Backend Developer   | Cape Peninsula University of Technology | sfisomawilanxumalo | <sfisonxumalo69@gmail.com> |
 
 ## 🏫 Institution
 ``` c
-// TODO: Fill-in the name of the institution your
-// team is competing under.
+University of Cape Town
 ```
 
 ## 📧 Other Contact Info
-- GitHub Repo: <https://github.com/user-name/repo-name>
-- Other Info (if available): LinkedIn, Website, etc.
+- GitHub Repo: [BudgetBuddy](https://github.com/SfisoNxumalo/BudgetBuddy)
+- Other Info (if available): [LinkedIn](https://www.linkedin.com/in/sifiso-mawila-1b888a224/), [Website](https://sfison.co.za/), etc.
