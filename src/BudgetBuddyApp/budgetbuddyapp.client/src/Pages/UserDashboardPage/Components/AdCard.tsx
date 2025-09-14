@@ -5,30 +5,27 @@ export default function AdCard(){
 
     return(
         <>
-          
-    <Card shadow="sm" padding="lg" radius="md" withBorder>
-      <Card.Section>
-        <Image
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-8.png"
-          height={160}
-          alt="Norway"
-        />
-      </Card.Section>
+            <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card.Section>
+                <Image
+                src="https://katana-coaching.ch/wp-content/uploads/2017/05/5f335619-f686-4e15-81c0-081934e4b326_16x9_788x442.jpg"
+                height={100}
+                alt="Norway"
+                />
+            </Card.Section>
 
-      <Group justify="space-between" mt="md" mb="xs">
-        <Text fw={500}>Norway Fjord Adventures</Text>
-        <Badge color="pink">On Sale</Badge>
-      </Group>
+            <Group justify="space-between" mt="md" mb="xs">
+                <Text size='sm' fw={500}>Financial Service Provider</Text>
+            </Group>
 
-      <Text size="sm" c="dimmed">
-        With Fjord Tours you can explore more of the magical fjord landscapes with tours and
-        activities on and around the fjords of Norway
-      </Text>
+            <Text size="xs" c="dimmed">
+                This card may occasionally display an advertisement from a financial services provider.
+            </Text>
 
-      <Button color="blue" fullWidth mt="md" radius="md">
-        Book classic tour now
-      </Button>
-    </Card>
+            <Button color="blue" fullWidth mt="md" radius="md">
+                See More
+            </Button>
+            </Card>
         </>
     )
 }
